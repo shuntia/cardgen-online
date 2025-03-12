@@ -76,7 +76,6 @@
                 align-self:center;
             }
             #extra{
-                display: flex;
                 justify-content: center;
                 align-items: center;
                 flex-direction: column;
@@ -88,7 +87,6 @@
                 background-color: #f1f1f1;
                 border-top-right-radius: 25px;
                 font-size:50px;
-                display: none;
             }
             #subtitle{
                 line-height: 75px;
@@ -189,7 +187,7 @@
         <input type="text" id="subtitle-input" oninput="document.getElementById('subtitle').innerText = this.value">
 
         <label for="extra-input">Extra:</label>
-        <input type="text" id="extra-input" oninput="document.getElementById('extra').innerText = this.value; document.getElementById('extra').style.display = this.value ? 'flex' : 'none'">
+        <input type="text" id="extra-input" oninput="document.getElementById('extra').innerText = this.value; document.getElementById('extra').style.display = this.value ? 'block' : 'none'">
 
         <label for="genre-input">Genre:</label>
         <input type="text" id="genre-input" oninput="document.querySelector('.genre-container').innerText = this.value">
