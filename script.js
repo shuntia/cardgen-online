@@ -6,3 +6,10 @@ function loadImage(event) {
     }
     reader.readAsDataURL(event.target.files[0]);
 }
+
+function download() {
+    domtoimage.toBlob(document.getElementsByClassName("card")[0])
+        .then(function (blob) {
+            window.saveAs(blob, 'card.png');
+        });
+}
