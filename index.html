@@ -1,219 +1,257 @@
 <!DOCTYPE html>
 <html lang="ja">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>CARD</title>
-        <link rel="stylesheet" href="https://use.typekit.net/ops8lqp.css">
-        <script src="script.js"></script>
-        <script src="dom-to-image.min.js"></script>
-        <script src="FileSaver.min.js"></script>
-    </head>
-    
-    <div class="card">
-        <style>
-            .header{
-                padding:10px;
-                height:150px;
-                width:1480;
-                background-color: #f1f1f1;
-                display:flex;
-                flex-direction:row;
-                justify-content:space-between;
-            }
-            #type{
-                border-radius: 75px;
-                border-width: 5px;
-                border-color:#000000;
-                height:150px;
-                width:150px;
-                background-image: url(TYPEIMG);
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
-            #category{
-                border-radius: 75px;
-                border-width: 5px;
-                height:150px;
-                width:150px;
-                background-image: url(CATEGORYIMG);
-                background-repeat: no-repeat;
-                background-size: cover;
 
-            }
-            #name{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height:100%;
-                background-color: #f1f1f1;
-                text-align: center;
-                font-size: 100px;
-            }
-            #image{
-                overflow: hidden;
-                height:900px;
-                width:1400px;
-                align-self: center;
-                background-image: url(MAINIMG);
-                background-repeat: no-repeat;
-                background-size: cover;
-                border-radius: 50px;
-                position: relative;
-            }
-            .card{
-                font-family: "oswald", sans-serif;
-                display: flex;
-                flex-direction: column;
-                overflow: hidden;
-                height:2100px;
-                width:1500px;
-                border:5px;
-                border-style: solid;
-                border-radius: 25px;
-                border-color:#000000;
-                background-color: antiquewhite;
-                align-self:center;
-            }
-            #extra{
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-                position:absolute;
-                bottom:0;
-                padding-right: 10px;
-                height:100px;
-                width:auto;
-                background-color: #f1f1f1;
-                border-top-right-radius: 25px;
-                font-size:50px;
-            }
-            #subtitle{
-                line-height: 75px;
-                font-size: 30px;
-                height:75px;
-                width:1300px;
-                background-color: #f1f1f1;
-                text-align: center;
-            }
-            #description{
-                font-size: 50px;
-                border-style: solid;
-                border-radius: 25px;
-                border-width: 2px;
-                padding:50px;
-                height:650px;
-                width:1100px;
-                background-color: #f1f1f1;
-                text-align: left;
-            }
-            .separator{
-                height:50px;
-                visibility: hidden;
-            }
-            #genre{
-                border-style: solid;
-                border-width:0px;
-                border-top-width: 2px;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                font-size:50px;
-                bottom:0;
-                height:150px;
-                width:1500px;
-                background-color: #f1f1f1;
-                text-align: center;
-                justify-self: flex-end;
-            }
-            .genre-container{
-                display: flex;
-                flex-direction: row;
-                justify-content:space-around;
-            }
-            image{
-                height:100%;
-                width:100%;
-                object-fit: cover;
-            }
-            .body{
-                padding:10px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: space-between;
-                height:100%;
-            }
-            html{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-        </style>
-        <link rel="stylesheet" href="https://use.typekit.net/ops8lqp.css">
-        <div class="header">
-            <div id="type">
-            </div>
-            <div id="name">
-            </div>
-            <div id="category">
-            </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARD</title>
+    <link rel="stylesheet" href="https://use.typekit.net/ops8lqp.css">
+    <script src="script.js"></script>
+    <script src="dom-to-image.min.js"></script>
+    <script src="FileSaver.min.js"></script>
+</head>
+
+<div class="card">
+    <style>
+        #header {
+            padding: 10px;
+            height: 150px;
+            width: 1480;
+            background-color: #f1f1f1;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        #type {
+            border-radius: 75px;
+            border-width: 5px;
+            border-color: #000000;
+            height: 150px;
+            width: 150px;
+            background-image: url(TYPEIMG);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #category {
+            border-radius: 75px;
+            border-width: 5px;
+            height: 150px;
+            width: 150px;
+            background-image: url(CATEGORYIMG);
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+
+        #name {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            background-color: #f1f1f1;
+            text-align: center;
+            font-size: 100px;
+        }
+
+        #image {
+            overflow: hidden;
+            height: 900px;
+            width: 1400px;
+            align-self: center;
+            background-image: url(MAINIMG);
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: 50px;
+            position: relative;
+        }
+
+        .card {
+            font-family: "oswald", sans-serif;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            height: 2100px;
+            width: 1500px;
+            border: 5px;
+            border-style: solid;
+            border-radius: 25px;
+            border-color: #000000;
+            background-color: antiquewhite;
+            align-self: center;
+        }
+
+        #extra {
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: absolute;
+            bottom: 0;
+            padding-right: 10px;
+            height: 100px;
+            width: auto;
+            background-color: #f1f1f1;
+            border-top-right-radius: 25px;
+            font-size: 50px;
+            display: none;
+        }
+
+        #subtitle {
+            line-height: 75px;
+            font-size: 30px;
+            height: 75px;
+            width: 1300px;
+            background-color: #f1f1f1;
+            text-align: center;
+        }
+
+        #description {
+            font-size: 50px;
+            border-style: solid;
+            border-radius: 25px;
+            border-width: 2px;
+            padding: 50px;
+            height: 650px;
+            width: 1100px;
+            background-color: #f1f1f1;
+            text-align: left;
+        }
+
+        .separator {
+            height: 50px;
+            visibility: hidden;
+        }
+
+        #genre {
+            border-style: solid;
+            border-width: 0px;
+            border-top-width: 2px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-size: 50px;
+            bottom: 0;
+            height: 150px;
+            width: 1500px;
+            background-color: #f1f1f1;
+            text-align: center;
+            justify-self: flex-end;
+        }
+
+        .genre-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        image {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .body {
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        html {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+    <link rel="stylesheet" href="https://use.typekit.net/ops8lqp.css">
+    <div id="header">
+        <div id="type">
         </div>
-        <div class="body">
+        <div id="name">
+        </div>
+        <div id="category">
+        </div>
+    </div>
+    <div class="body">
+        <div style="align-items: center;display: flex;flex-direction:column">
             <div id="image">
                 <div id="extra">
                 </div>
             </div>
             <div id="subtitle">
             </div>
-            <div id="description">
-            </div>
         </div>
-        <div id="genre">
-            <div class="genre-container">
-            </div>
+        <div id="description">
         </div>
     </div>
-    <div class="input">
-        <label for="name-input">Name:</label>
-        <input type="text" id="name-input" oninput="document.getElementById('name').innerText = this.value">
-
-        <label for="subtitle-input">Subtitle:</label>
-        <input type="text" id="subtitle-input" oninput="document.getElementById('subtitle').innerText = this.value">
-
-        <label for="extra-input">Extra:</label>
-        <input type="text" id="extra-input" oninput="document.getElementById('extra').innerText = this.value; document.getElementById('extra').style.display = this.value ? 'block' : 'none'">
-
-        <label for="genre-input">Genre:</label>
-        <input type="text" id="genre-input" oninput="document.querySelector('.genre-container').innerText = this.value">
-
-        <label for="description-input">Description:</label>
-        <textarea id="description-input" oninput="replacedesc(this.value)"></textarea>
-
-        <label for="type-input">Type:</label>
-        <select id="type-input" oninput="document.getElementById('type').style.backgroundImage = 'url(' + this.value + ')'">
-            <option value="./assets/SONG.png">SONG</option>
-            <option value="./assets/SKILL.png">SKILL</option>
-            <option value="./assets/CHARACTER.png">CHARACTER</option>
-        </select>
-
-        <label for="category-input">Category:</label>
-        <select id="category-input" oninput="document.getElementById('category').style.backgroundImage = 'url(' + this.value + ')'">
-            <option value="./assets/NOTES.png">NOTES</option>
-            <option value="./assets/PEAK.png">PEAK</option>
-            <option value="./assets/TECHNIQUE.png">TECHNIQUE</option>
-            <option value="./assets/STAMINA.png">STAMINA</option>
-            <option value="./assets/TRICKY.png">TRICKY</option>
-            <option value="./assets/SPECIAL.png">SPECIAL</option>
-            <option value="./assets/SKILL_BUFF.png">SKILL_BUFF</option>
-            <option value="./assets/SKILL_DEBUFF.png">SKILL_DEBUFF</option>
-            <option value="./assets/SKILL_SPECIAL.png">SKILL_SPECIAL</option>
-            <option value="./assets/SKILL_CLOWN.png">SKILL_CLOWN</option>
-        </select>
-
-        <label for="main-image-input">Main Image:</label>
-        <input type="file" id="main-image-input" accept="image/*" onchange="loadImage(event)">
-
-        <button onclick="download()">Download</button>
+    <div id="genre">
+        <div class="genre-container">
+        </div>
     </div>
+</div>
+<div class="input" style="display:flex;flex-direction: column;">
+    <label for="name-input">Name:</label>
+    <input type="text" id="name-input" oninput="document.getElementById('name').innerText = this.value">
+
+    <label for="subtitle-input">Subtitle:</label>
+    <input type="text" id="subtitle-input" oninput="document.getElementById('subtitle').innerText = this.value">
+
+    <label for="extra-input">Extra:</label>
+    <input type="text" id="extra-input"
+        oninput="document.getElementById('extra').innerText = this.value; document.getElementById('extra').style.display = this.value ? 'block' : 'none'">
+
+    <label for="genre-input">Genre:</label>
+    <input type="text" id="genre-input" oninput="document.querySelector('.genre-container').innerText = this.value">
+
+    <label for="description-input">Description:</label>
+    <textarea id="description-input" oninput="replacedesc(this.value)"></textarea>
+
+    <label for="type-input">Type:</label>
+    <select id="type-input" oninput="document.getElementById('type').style.backgroundImage = 'url(' + this.value + ')'">
+        <option value="./assets/SONG.png">SONG</option>
+        <option value="./assets/SKILL.png">SKILL</option>
+        <option value="./assets/CHARACTER.png">CHARACTER</option>
+    </select>
+
+    <label for="category-input">Category:</label>
+    <select id="category-input"
+        oninput="document.getElementById('category').style.backgroundImage = 'url(' + this.value + ')'">
+        <option value="./assets/NOTES.png">NOTES</option>
+        <option value="./assets/PEAK.png">PEAK</option>
+        <option value="./assets/TECHNIQUE.png">TECHNIQUE</option>
+        <option value="./assets/STAMINA.png">STAMINA</option>
+        <option value="./assets/TRICKY.png">TRICKY</option>
+        <option value="./assets/SPECIAL.png">SPECIAL</option>
+        <option value="./assets/SKILL_BUFF.png">SKILL_BUFF</option>
+        <option value="./assets/SKILL_DEBUFF.png">SKILL_DEBUFF</option>
+        <option value="./assets/SKILL_SPECIAL.png">SKILL_SPECIAL</option>
+        <option value="./assets/SKILL_CLOWN.png">SKILL_CLOWN</option>
+    </select>
+
+    <label for="main-image-input">Main Image:</label>
+    <input type="file" id="main-image-input" accept="image/*" onchange="loadImage(event)">
+
+    <button onclick="togglemenu()">Advanced Options</button>
+    <div id="menu" style="display: none; display: inherit; flex-direction: inherit">
+        <label for="bgcolor">Background</label>
+        <input id="bgcolor" type="color" onchange="adjustbg(this)">
+
+        <label for="headercolor">Header</label>
+        <input id="headercolor" type="color" onchange="adjustheader(this)">
+
+        <label for="descheight">Height of Description</label>
+        <input id="descheight" type="number" onchange="descheight(this)">
+        <label for="descwidth">Width of Description</label>
+        <input id="descwidth" type="number" onchange="descwidth(this)">
+        <label for="descpad">Padding of Description</label>
+        <input id="descpad" type="number" onchange="descpad(this)">
+    </div>
+
+    <button onclick="download()">Download</button>
+
+</div>
+
 </html>
