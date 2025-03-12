@@ -101,9 +101,9 @@
                 border-style: solid;
                 border-radius: 25px;
                 border-width: 2px;
-                padding:25px;
-                height:700px;
-                width:1150px;
+                padding:50px;
+                height:650px;
+                width:1100px;
                 background-color: #f1f1f1;
                 text-align: left;
             }
@@ -188,7 +188,7 @@
         <input type="text" id="genre-input" oninput="document.querySelector('.genre-container').innerText = this.value">
 
         <label for="description-input">Description:</label>
-        <textarea id="description-input" oninput="document.getElementById('description').innerText = this.value"></textarea>
+        <textarea id="description-input" oninput="replacedesc(this.value)"></textarea>
 
         <label for="type-input">Type:</label>
         <select id="type-input" oninput="document.getElementById('type').style.backgroundImage = 'url(' + this.value + ')'">

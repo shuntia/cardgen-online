@@ -13,3 +13,12 @@ function download() {
             window.saveAs(blob, 'card.png');
         });
 }
+
+function replacedesc(value) {
+    var desc = value.split("\n");
+    var accumulate = "";
+    for (var i = 0; i < desc.length; i++) {
+        accumulate += "<li>" + desc[i] + "</li>";
+    }
+    document.getElementById("description").innerHTML = accumulate;
+}
