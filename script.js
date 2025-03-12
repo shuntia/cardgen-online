@@ -53,3 +53,11 @@ function descheight(value){
 function descwidth(value){
     document.getElementById("description").style.width=value.value+"px";
 }
+function adjustgenre(value){
+    var accumulate="";
+    var genre=value.split("\n");
+    for(var i=0;i<genre.length;i++){
+        accumulate+="<div>"+genre[i]+"</div>";
+    }
+    document.getElementById("genre").innerHTML=accumulate;
+}

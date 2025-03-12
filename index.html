@@ -204,7 +204,7 @@
         oninput="document.getElementById('extra').innerText = this.value; document.getElementById('extra').style.display = this.value ? 'block' : 'none'">
 
     <label for="genre-input">Genre:</label>
-    <input type="text" id="genre-input" oninput="document.querySelector('.genre-container').innerText = this.value">
+    <input type="text" id="genre-input" oninput="adjustgenre(this.value)">
 
     <label for="description-input">Description:</label>
     <textarea id="description-input" oninput="replacedesc(this.value)"></textarea>
