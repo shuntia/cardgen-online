@@ -248,6 +248,15 @@
         <input id="descwidth" type="number" onchange="descwidth(this)">
         <label for="descpad">Padding of Description</label>
         <input id="descpad" type="number" onchange="descpad(this)">
+        <label for="advanced">ADVANCED TARGET</label>
+        <input id="advanced" type="text">
+        <label for="advancedkey">ADVANCED KEY</label>
+        <input id="advancedkey" type="text">
+        <label for="advancedval">ADVANCED VALUE</label>
+        <input id="advancedval" type="text">
+        <button
+            onclick="document.getElementById(document.getElementById('advanced').value).style.setProperty(document.getElementById('advancedkey').value,document.getElementById('advancedval').value)">APPLY
+            ADVANCED(!!!DANGEROUS!!!)</button>
     </div>
 
     <button onclick="download()">Download</button>
